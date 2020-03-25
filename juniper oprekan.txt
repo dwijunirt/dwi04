@@ -1,0 +1,16 @@
+root
+cli
+set system root plain
+commit
+exit
+show interf terse
+edit
+edit interfa em0 unit 0
+set family inet address 200.200.10.2/24
+top
+commit
+
+edit routing-option static
+set route 0.0.0.0/0 next-hope 200.200.10.1
+set system name-server 8.8.8.8
+commit
